@@ -93,7 +93,7 @@ public class Main extends Application {
         ligneHNuit.setStroke(Color.GRAY);
 
         Circle soleil = new Circle(320,70,40);
-        soleil.setStrokeWidth(2);
+        soleil.setStrokeWidth(5);
         soleil.setFill(Color.YELLOW);
         soleil.setStroke(Color.LIGHTGREY);
         FillTransition ftSoleil = new FillTransition(Duration.seconds(2),soleil);
@@ -177,8 +177,28 @@ public class Main extends Application {
         aileD2.setFill(Color.LIGHTGREY);
         aileD2.setStroke(Color.BLACK);
 
-        Polygon etoile1= new Polygon(450,18,440,30,425,30,435,40,430,50,450,43,470,50,465,40,475,30,460,30);
+        Polygon etoile1= new Polygon(450,18,442,30,425,30,440,38,430,50,450,43,470,50,460,38,475,30,458,30);
         etoile1.setFill(Color.YELLOW);
+        Polygon etoile2 = new Polygon(450,18,442,30,425,30,440,38,430,50,450,43,470,50,460,38,475,30,458,30);
+        etoile2.setFill(Color.YELLOW);
+        etoile2.setTranslateX(60);
+        etoile2.setTranslateY(10);
+        etoile2.setScaleX(0.65);
+        etoile2.setScaleY(0.65);
+
+        Polygon etoile3 = new Polygon(450,18,442,30,425,30,440,38,430,50,450,43,470,50,460,38,475,30,458,30);
+        etoile3.setFill(Color.YELLOW);
+        etoile3.setTranslateX(30);
+        etoile3.setTranslateY(60);
+        etoile3.setScaleX(1.65);
+        etoile3.setScaleY(1.65);
+
+        Polygon etoile4 = new Polygon(450,18,442,30,425,30,440,38,430,50,450,43,470,50,460,38,475,30,458,30);
+        etoile4.setFill(Color.YELLOW);
+        etoile4.setTranslateX(90);
+        etoile4.setTranslateY(50);
+        etoile4.setScaleX(0.35);
+        etoile4.setScaleY(0.35);
 
         FadeTransition etoileFlash1= new FadeTransition(Duration.seconds(1),etoile1);
         etoileFlash1.setFromValue(1);
@@ -186,6 +206,29 @@ public class Main extends Application {
         etoileFlash1.setAutoReverse(true);
         etoileFlash1.setCycleCount(Timeline.INDEFINITE);
         etoileFlash1.play();
+
+        FadeTransition etoileFlash2= new FadeTransition(Duration.seconds(0.5),etoile2);
+        etoileFlash2.setFromValue(1);
+        etoileFlash2.setToValue(0);
+        etoileFlash2.setAutoReverse(true);
+        etoileFlash2.setCycleCount(Timeline.INDEFINITE);
+        etoileFlash2.play();
+
+        FadeTransition etoileFlash3= new FadeTransition(Duration.seconds(3),etoile3);
+        etoileFlash3.setFromValue(1);
+        etoileFlash3.setToValue(0);
+        etoileFlash3.setAutoReverse(true);
+        etoileFlash3.setCycleCount(Timeline.INDEFINITE);
+        etoileFlash3.play();
+
+        FadeTransition etoileFlash4= new FadeTransition(Duration.millis(100),etoile4);
+        etoileFlash4.setFromValue(1);
+        etoileFlash4.setToValue(0);
+        etoileFlash4.setAutoReverse(true);
+        etoileFlash4.setCycleCount(Timeline.INDEFINITE);
+        etoileFlash4.play();
+
+
 
         Timeline timeline = new Timeline();
         timeline.setCycleCount(Timeline.INDEFINITE);
@@ -211,7 +254,7 @@ public class Main extends Application {
 
         Group root = new Group(jour,nuit,textJour,textNuit,baseMaison,toitJour,porteJour,poigneeJour,fenetreJour,
                 ligneVJour,ligneHJour,ligneSoleil1,ligneSoleil2,ligneSoleil3,ligneSoleil4,soleil,aileG1,aileD1,aileG2,aileD2,toitNuit,baseMaisonNuit,
-                porteNuit,poigneeNuit,fenetreNuit,ligneVNuit,ligneHNuit,lune,etoile1);
+                porteNuit,poigneeNuit,fenetreNuit,ligneVNuit,ligneHNuit,lune,etoile1,etoile2,etoile3,etoile4);
 
        stage.setScene(new Scene(root));
        stage.show();
